@@ -4,7 +4,10 @@ import React from "react";
 function ItemChart(props) {
     return (
         <ul>
-          {props.list.map((item, i) => <li key={i}>{item.item}</li>)}
+          {props.list.map((item, i) => 
+            <div>
+                <li key={i}>{item.item}</li>
+            </div>)}
         </ul>
       );
 }

@@ -29,6 +29,7 @@ function TodoList() {
         setTodoListItem(e.target.value)
     }
 
+
     return (
         <div>
             {
@@ -37,7 +38,7 @@ function TodoList() {
                     <InputField value={todoListItem} onChange={handleInput} />
                     <Button text="Add to List" onClick={handleList} />
                     <Button text="Clear List" onClick={handleClearList}/>
-                    <ItemChart list={todoList} />
+                    <ItemChart list={todoList}/>
                 </div>
                 : <Button text="Create List" onClick={handleIsEditing} />
             }
