@@ -1,11 +1,11 @@
-import List from "./web/components/list";
+import TodoList from "./web/screens/todoList";
 
 
 function App() {
   return (
     <div className="App">
       <h1>To-do</h1>
-      <List />
+      <TodoList />
     </div>
   );
 }

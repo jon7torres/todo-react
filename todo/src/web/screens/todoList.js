@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Button from "./button";
-import InputField from "./inputField";
-import ItemChart from "./itemChart";
+import Button from "../components/button";
+import InputField from "../components/inputField";
+import ItemChart from "../components/itemChart";
 
 
-function List() {
+function TodoList() {
     const [isEditing, setIsEditiing] = useState(false);
     const [todoList, setTodoList] = useState([]);
     const [todoListItem, setTodoListItem] = useState("");
@@ -20,7 +20,9 @@ function List() {
     }
 
     const handleList = (item) => {
-        setTodoList([...todoList, {item: todoListItem}]);
+        if (todoListItem !== "" && todoList.length < 20){
+            setTodoList([...todoList, {item: todoListItem}]);
+        }
     }
 
     const handleInput = (e) => {
@@ -32,10 +34,10 @@ function List() {
             {
                 isEditing ? 
                 <div>
-                    <ItemChart list={todoList} />
                     <InputField value={todoListItem} onChange={handleInput} />
                     <Button text="Add to List" onClick={handleList} />
                     <Button text="Clear List" onClick={handleClearList}/>
+                    <ItemChart list={todoList} />
                 </div>
                 : <Button text="Create List" onClick={handleIsEditing} />
             }
@@ -43,4 +45,4 @@ function List() {
     );
 }
 
-export default List;
+export default TodoList;
